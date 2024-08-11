@@ -1,8 +1,6 @@
 // ***********************************************
 // SET OF EDGE CASES
 // ***********************************************
-const generateUniqueUser = require("../pages/user_create");
-
 const token = Cypress.env("token");
 const url = `${Cypress.env("ENV_1")}${Cypress.env("subURL")}`;
 
@@ -40,7 +38,7 @@ describe("USER: set of EDGE cases", () => {
 
   // REACH TOKEN LIMIT
   it("Should reach TOKEN LIMIT of 90 PER MINUTE", () => {
-    for (let i = 1; i < 91; i++) {
+    for (let i = 1; i < 101; i++) {
       cy.cmdGET(url, token).then((response) => {
         if (response.status != 200) {
           // Assert response status code and body

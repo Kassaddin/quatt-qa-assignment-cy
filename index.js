@@ -1,3 +1,5 @@
+// IGNORE THIS FILE
+// USED FOR TESTING
 const genUser = require('./cypress/pages/user_create');
 const userSchema = require('./cypress/pages/user_schema');
 

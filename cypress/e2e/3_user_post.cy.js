@@ -1,5 +1,5 @@
 // ***********************************************
-// SET OF CHECKS FOR POST METHOD
+// SET OF TESTS FOR POST METHOD
 // ***********************************************
 const generateUniqueUser = require("../pages/user_create");
 

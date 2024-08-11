@@ -1,5 +1,7 @@
 # Editors
 cypress/downloads/
+cypress/screenshots/
+reports/
 
 # Dependency directories
 node_modules/

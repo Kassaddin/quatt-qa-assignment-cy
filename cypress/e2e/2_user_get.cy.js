@@ -1,5 +1,5 @@
 // ***********************************************
-// SET OF CHECKS FOR GET METHOD
+// SET OF TESTS FOR GET METHOD
 // ***********************************************
 const checkSchema = require("../pages/user_schema");
 const token = Cypress.env("token");

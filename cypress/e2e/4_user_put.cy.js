@@ -1,5 +1,5 @@
 // ***********************************************
-// SET OF CHECKS FOR PUT AND PATCH METHODS
+// SET OF TESTS FOR PUT AND PATCH METHODS
 // ***********************************************
 const generateUniqueUser = require("../pages/user_create");
 
