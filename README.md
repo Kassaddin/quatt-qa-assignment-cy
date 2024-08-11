@@ -54,11 +54,11 @@ Run **[Cypress](https://www.cypress.io/)**
 ```
 npm run ui
 ```
-- Run all tests in a chrome headless with image-diff headed mode
+- Run all tests in a chrome headed mode
 ```
 npm run e2e
 ```
-- Run all tests in a chrome force-headless mode
+- Run all tests in a chrome headless mode
 ```
 npm run e2ehl
 ```
