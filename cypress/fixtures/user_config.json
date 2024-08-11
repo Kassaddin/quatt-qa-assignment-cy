@@ -1,0 +1,26 @@
+{
+    "names": [
+        "John Doe",
+        "Jane Smith",
+        "Alice Johnson",
+        "Bob Brown",
+        "Eve Davis"
+    ],
+    "gender": [
+        "male",
+        "female"
+    ],
+    "status": [
+        "active",
+        "inactive"
+    ],
+    "email": [
+        "testEnv1",
+        "testEnv2",
+        "testEnv3"
+    ],
+    "domain": [
+        "google.com",
+        "companyname.com"
+    ]
+}

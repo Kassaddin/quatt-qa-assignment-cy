@@ -1,0 +1,5 @@
+# Editors
+cypress/downloads/
+
+# Dependency directories
+node_modules/
