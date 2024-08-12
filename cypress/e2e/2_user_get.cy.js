@@ -8,6 +8,7 @@ const url = `${Cypress.env("ENV_1")}${Cypress.env("subURL")}`;
 // Generate new ULR with non-exitent id
 let id = Math.floor(Math.random() * 1000);
 let url_id = `${url}/${id}`;
+let user_id;
 
 describe("USER: set of tests for GET method", () => {
   // GET LIST OF USERS
@@ -17,6 +18,8 @@ describe("USER: set of tests for GET method", () => {
       expect(response.status).to.eq(200);
       // Check fields of last item in array
       let i = response.body.length;
+      user_id = response.body[i - 1].id;
+      cy.log(user_id);
       expect(response.body[i - 1]).to.have.keys(
         "id",
         "name",
@@ -25,10 +28,9 @@ describe("USER: set of tests for GET method", () => {
         "status"
       );
       // Assert that schema is valid
-      expect(checkSchema.validateUserData(response.body[i-1])).to.have.property(
-        "success",
-        true
-      );
+      expect(
+        checkSchema.validateUserData(response.body[i - 1])
+      ).to.have.property("success", true);
       cy.log("********************************");
       cy.log("VERIFY GET: LIST OF USERS");
       cy.log("********************************");
@@ -80,6 +82,22 @@ describe("USER: set of tests for GET method", () => {
       cy.log("********************************");
       cy.log("VERIFY 404 FOR USER WITH &nbsp ID");
       cy.log(`EXPECT: {"message": "Resource not found"}`);
+      cy.log("********************************");
+    });
+  });
+
+  // CHECK GET OF USER WITH INVALID TOKEN
+  it("Should NOT GET user with INVALID TOKEN provided", () => {
+    // Update ULR with &nbsp id
+    let iv_token = "such1token2much3inavalid";
+    id = "&nbsp;";
+    url_id = `${url}/${user_id}`;
+    cy.cmdGET(url_id, iv_token).then((response) => {
+      // Assert response status code
+      expect(response.status).to.eq(401);
+      cy.log("********************************");
+      cy.log("VERIFY 401 FOR GET REQUEST WITH INVALID TOKEN");
+      cy.log(`INVALID TOKEN: ${iv_token}`);
       cy.log("********************************");
     });
   });

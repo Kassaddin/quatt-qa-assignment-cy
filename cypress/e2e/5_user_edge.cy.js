@@ -24,13 +24,14 @@ describe("USER: set of EDGE cases", () => {
   });
 
   // INVALID TOKEN
-  it("Should NOT GET with INVALID TOKEN", () => {
+  it("Should NOT GET with INVALID TOKEN and NON-EXISTENT USER", () => {
     let iv_token = "such1token2much3inavalid";
     cy.cmdGET(url, iv_token).then((response) => {
       // Assert response status code and body
       expect(response.status).to.eq(401);
       expect(response.body.message).to.eq("Invalid token");
       cy.log("********************************");
+      cy.log("VERIFY 401 FOR GET REQUEST WITH INVALID TOKEN");
       cy.log(`INVALID TOKEN: ${iv_token}`);
       cy.log("********************************");
     });
