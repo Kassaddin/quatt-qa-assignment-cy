@@ -36,21 +36,25 @@ describe("USER: set of EDGE cases", () => {
     });
   });
 
-  // REACH TOKEN LIMIT
+  // CHECK AMOUNT OF 200 AND 429 REQUESTS FOR 100 CALLS
   it("Should reach TOKEN LIMIT of 90 PER MINUTE", () => {
-    for (let i = 1; i < 101; i++) {
+    let good=1;
+    let bad=1;
+    for (let i=1; i < 101; i++) {
       cy.cmdGET(url, token).then((response) => {
-        if (response.status != 200) {
-          // Assert response status code and body
+        if (response.status === 429){
+          // Assert response status code and count it
           expect(response.status).to.eq(429);
+          cy.log(`429 REQUEST COUNT: ${bad}`);
+          bad++;
         } else {
-          cy.log(`REQUEST NUMBER: ${i}`);
+          cy.log(`200 REQUEST COUNT: ${good}`);
+          good++;
         }
       });
     }
-    //expect(response.body.message).to.eq("Invalid token");
     cy.log("********************************");
-    cy.log(`VERIFY REQEST LIMIT NUMBER OF 90`);
+    cy.log("AMOUNT OF 200 AND 429 REQUESTS PER 100 CALLS");
     cy.log("********************************");
   });
 });
