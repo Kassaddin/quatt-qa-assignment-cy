@@ -3,7 +3,7 @@ QA framework outline for the [Quatt](https://www.quatt.io/) assignment.
 
 ## Description
 ### Assignment
-> Create e2e test scenarios for the CRUD user operations with API Version 2 and HTTP Bearer Token authentication from https://gorest.co.in/ service. Use JavaScript or TypeScript and a framework of your choice (currently we use Jest and Supertest, please don't use Postman for this).
+> Create e2e test scenarios for the CRUD user operations with API Version 2 and HTTP Bearer Token authentication from https://gorest.co.in/ service. Use JavaScript or TypeScript and a framework of your choice (for example Jest and Supertest, please don't use Postman for this).
 ### Approach
 1. Gather data and outline scope.
 2. Prepare  [primary documentation](https://docs.google.com/spreadsheets/d/1QJ5d27kjzJzKOpvyQAeB6tHe0FMh2BDyT5neeIqtbow/edit?usp=sharing).
